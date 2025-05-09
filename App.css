@@ -1,0 +1,986 @@
+/* General Styles */
+.app-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.main-section {
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh; /* Full screen height */
+  margin: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.main-title {
+  font-size: 4.5rem;
+  margin: 0;
+  font-family: "Great Vibes", cursive;
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(45deg, #ffd54f, #ff7043);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  transform: translateX(-100px); /* Move title a lot further to the left */
+}
+
+.main-title:hover {
+  transform: scale(1.1) translateX(-100px); /* Keep it to the left on hover */
+  color: #ffcc80;
+  text-shadow: 4px 4px 20px rgba(255, 193, 7, 0.8);
+}
+
+.main-subtitle {
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #fffde7;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  transform: translateX(-100px); /* Move subtitle a lot further to the left */
+}
+
+.dynamic-text {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  color: #FFEB3B;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dynamic-text:hover {
+  color: #FFC107;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+}
+
+
+/* About Section */
+.about-section {
+  padding: 2rem 1rem;
+  background-color: #1c1c1c;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border: 2px solid #ffc107; /* Add border with yellow color */
+  border-radius: 10px; /* Optional rounded corners */
+}
+
+/* Main Content Container */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+
+/* About Section - Slightly larger image and moved up */
+.about-image {
+  flex: 1;
+  max-width: 35%;  /* Increase the maximum width of the image container */
+  height: 150px;   /* Slightly increase the height of the image container */
+  width: 150px;    /* Slightly increase the width of the image container */
+  background-position: center;  /* Keep the image centered */
+  background-repeat: no-repeat;  /* Prevent image repetition */
+  background-size: contain;  /* Make sure the image fits the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Increased shadow */
+  margin-top: -90px;  /* Move the image further upwards */
+  transition: box-shadow 0.3s ease, opacity 0.3s ease; /* Smooth transition for shadow and opacity */
+}
+
+/* Image inside .about-image */
+.about-image img {
+  width: 100%;  /* Ensure the image takes full width of the container */
+  height: auto;  /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+/* Hover effect */
+.about-image:hover {
+  box-shadow: 0 4px 50px rgba(255, 255, 255, 0.8); /* Increased shadow with white color on hover */
+  opacity: 0.5;  /* Make the image fade to white on hover */
+}
+
+
+/* Text Section */
+.about-text {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+}
+
+/* Heading Styling */
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #ffc107;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Paragraph Styling */
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 1rem 0;
+  color: #f1f1f1;
+}
+
+/* List of Features */
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.about-features li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+/* Tick mark styling */
+.tick {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: yellow; /* Yellow color */
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23000" d="M9 17l-5-5 1.41-1.41L9 14.17l9.59-9.59L20 6l-11 11z"/></svg>') no-repeat;
+  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23000" d="M9 17l-5-5 1.41-1.41L9 14.17l9.59-9.59L20 6l-11 11z"/></svg>') no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  margin-right: 8px;
+}
+
+/* Menu Section */
+.menu-section {
+  padding: 60px 30px; /* Increased padding for better spacing */
+  background: linear-gradient(135deg, #4a2c2a, #6f4f38); /* Gradient with brown tones, matching the other sections */
+  color: white; /* Ensures text is readable */
+  text-align: center; /* Centers all content */
+  border: 5px solid #a56c36; /* Golden-brown border to separate from below section */
+  border-radius: 15px; /* Rounded corners for a soft effect */
+  margin-bottom: 40px; /* Adds space between this section and the one below */
+}
+
+.menu-title {
+  font-size: 2.5rem; /* Larger heading */
+  margin-bottom: 40px; /* Space below heading */
+  color: #ffd700; /* Gold for the heading */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Subtle glow effect */
+  font-family: 'Arial', sans-serif; /* Modern font */
+}
+
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.menu-button {
+  padding: 0.7rem 1.5rem; /* Increased padding for buttons */
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  background-color: #3e2a2a; /* Dark brown background */
+  color: #ffd700; /* Yellow text */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-button:hover,
+.menu-button.active {
+  background-color: #ffd700; /* Yellow background on hover */
+  color: #3e2a2a; /* Dark brown text color on hover */
+  transform: scale(1.1); /* Slightly larger hover effect */
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Reduced columns to 4 for larger cards */
+  gap: 2rem; /* Increased gap between items */
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.menu-card {
+  background: linear-gradient(145deg, #6f4f38, #4a2c2a); /* Gradient of brown and dark tones */
+  border-radius: 15px; /* Rounded corners for softer look */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+  padding: 25px;
+  text-align: center;
+  color: white; /* Ensuring text inside cards is readable */
+  border: 3px solid #a56c36; /* Border to match the section theme */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Menu Card Hover Effect */
+.menu-card:hover {
+  transform: translateY(-10px); /* Moves the card up on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+.menu-img {
+  width: 100%;
+  height: 200px; /* Increased card height */
+  object-fit: cover;
+  border-radius: 8px; /* Rounded image edges */
+}
+
+.menu-name {
+  padding: 1rem;
+  font-size: 1.2rem; /* Larger font size */
+  font-weight: bold;
+  color: #ffd700; /* Yellow text color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.menu-card:hover .menu-name {
+  color: white; /* Highlight color on hover */
+}
+
+@media (max-width: 768px) {
+  .menu-items {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on small screens */
+  }
+
+  .menu-card {
+    transform: scale(1); /* Reset scaling on small screens */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Less intense shadow on smaller screens */
+  }
+
+  .menu-img {
+    height: 180px; /* Adjust image height for smaller screens */
+  }
+}
+
+/* Special Offer Section */
+.special-offer-section {
+  padding: 3rem 1rem;
+  background-color: #1c1c1c;
+  color: white;
+  display: flex;
+  flex-direction: column;  /* Stack elements vertically */
+  justify-content: flex-start;  /* Align items to the top */
+  align-items: center;
+  gap: 0;  /* Removed gap to bring elements together */
+  text-align: center;
+  border: 2px solid #ffc107; /* Add border with yellow color */
+  border-radius: 10px; /* Optional rounded corners */
+  margin-bottom: 2rem; /* Add space between sections */
+}
+
+/* Main Content Container */
+.special-offer-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* Align elements to the left */
+  gap: 0;  /* Removed gap between the text and image */
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+/* Offer Text Section */
+.offer-text {
+  flex: 1;
+  max-width: 50%;  /* Ensure the text takes up half of the space */
+  color: #ffc107;
+  text-align: left;  /* Align text to the left */
+  margin-right: 0;  /* Removed the margin between text and image */
+}
+
+/* Offer Title */
+.offer-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin-top: 0;  /* Remove top margin */
+}
+
+/* Offer Description */
+.offer-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #f1f1f1;
+}
+
+/* Special Offer Image Section */
+.offer-image {
+  flex: 1;
+  max-width: 45%;  /* Increased max width of the image */
+  height: 150px;   /* Reduced height */
+  width: 150px;    /* Consistent width */
+  background-position: center;  /* Keep the image centered */
+  background-repeat: no-repeat;  /* Prevent image repetition */
+  background-size: contain;  /* Make sure the image fits the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Increased shadow */
+  margin-top: -90px;  /* Increased negative margin to move the image upwards */
+  transition: box-shadow 0.3s ease, opacity 0.3s ease; /* Smooth transition for shadow and opacity */
+}
+
+/* Image inside .offer-image */
+.offer-image img {
+  width: 100%;  /* Ensure the image takes full width of the container */
+  height: auto;  /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+/* Hover effect */
+.offer-image:hover {
+  box-shadow: 0 4px 50px rgba(255, 255, 255, 0.8); /* Increased shadow with white color on hover */
+  opacity: 0.5;  /* Make the image fade to white on hover */
+}
+
+/* Pseudo-element for the overlay (if using background image) */
+.offer-image::before {
+  content: '';  /* No content needed */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4); /* White semi-transparent overlay */
+  border-radius: 10px;
+  opacity: 0;  /* Initially invisible */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+/* Hover effect for overlay */
+.offer-image:hover::before {
+  opacity: 1;  /* Make the overlay visible on hover */
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .special-offer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .offer-text,
+  .offer-image {
+    max-width: 100%;
+  }
+
+  .offer-title {
+    font-size: 2.5rem;
+  }
+
+  .offer-description {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* Menu Items */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menu-card {
+  width: 22%;
+  margin: 10px 0;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.menu-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.menu-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.menu-price {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+/* Our Outlets Section */
+.outlet-section {
+  padding: 60px 30px; /* Increased padding for better spacing */
+  background: linear-gradient(135deg, #4a2c2a, #6f4f38); /* Gradient for dynamic background */
+  text-align: center;
+  color: white; /* Ensures text is readable */
+  min-height: 100vh; /* Full viewport height, even with added content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the content vertically */
+  align-items: center; /* Centers the content horizontally */
+  border: 5px solid #a56c36; /* Golden-brown border to separate from below section */
+  border-radius: 15px; /* Rounded corners for a softer look */
+  margin-bottom: 40px; /* Space between sections */
+}
+
+.outlet-section h2 {
+  font-size: 2.5rem; /* Larger and more prominent heading */
+  margin-bottom: 40px; /* Space below heading */
+  color: #ffd700; /* Gold color for the heading */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Subtle glow effect for heading */
+  font-family: 'Arial', sans-serif; /* Modern and clean font */
+}
+
+/* Outlet Cards Container */
+.outlet-cards {
+  display: flex;
+  justify-content: center; /* Centers the outlet cards horizontally */
+  gap: 30px; /* Increased spacing for better layout */
+  flex-wrap: wrap; /* Allows wrapping of cards on smaller screens */
+  margin-top: 20px;
+  max-width: 1200px; /* Limit the container width */
+  width: 100%;
+}
+
+/* Individual Outlet Card */
+.outlet-card {
+  background: linear-gradient(145deg, #6f4f38, #4a2c2a); /* Gradient background for cards */
+  border-radius: 15px; /* Rounded corners for a softer look */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+  width: 320px; /* Slightly larger cards */
+  padding: 25px;
+  text-align: center;
+  border: 3px solid #a56c36; /* Border matches theme */
+  color: white; /* Ensures text inside cards is readable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Outlet Card Hover Effect */
+.outlet-card:hover {
+  transform: translateY(-10px); /* Moves the card up on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Outlet Image */
+.outlet-img {
+  width: 100%; /* Full card width for the image */
+  height: 220px; /* Slightly taller image for better visuals */
+  object-fit: cover; /* Ensures images are properly cropped */
+  border-radius: 10px; /* Rounded corners for images */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for images */
+}
+
+/* Outlet Info Container */
+.outlet-info {
+  padding: 0 15px; /* Added slight padding for better spacing */
+}
+
+/* Outlet Name */
+.outlet-name {
+  font-size: 1.6rem; /* Larger font for outlet names */
+  font-weight: bold;
+  color: #ffd700; /* Gold text for outlet names */
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Glow effect for text */
+}
+
+/* Outlet Address and Hours */
+.outlet-address,
+.outlet-hours {
+  font-size: 1rem;
+  color: #f2f2f2; /* Light gray for details */
+  margin-bottom: 10px; /* Increased spacing for better layout */
+  line-height: 1.5; /* Better readability */
+  font-style: italic; /* Adds elegance to text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .outlet-section h2 {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+  .outlet-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 400px; /* Limit max width */
+  }
+  .outlet-img {
+    height: 180px; /* Adjust image height for smaller screens */
+  }
+}
+
+/* Customer Reviews Section */
+.customer-review-section {
+  padding: 60px 30px; /* Increased padding for better spacing */
+  background: linear-gradient(135deg, #4a2c2a, #6f4f38); /* Gradient for a more dynamic background */
+  color: white; /* Ensures text is readable */
+  text-align: center; /* Centers all content */
+  border: 5px solid #a56c36; /* Golden-brown border to separate from below section */
+  border-radius: 15px; /* Rounded corners for a softer look */
+  margin-bottom: 40px; /* Space between sections */
+}
+
+.customer-review-section h2 {
+  font-size: 2.5rem; /* Larger heading */
+  margin-bottom: 40px; /* Space below heading */
+  color: #ffd700; /* Gold for the heading */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Subtle glow effect */
+  font-family: 'Arial', sans-serif; /* Modern font */
+}
+
+.reviews-container {
+  display: flex;
+  justify-content: center; /* Centers the review cards horizontally */
+  align-items: center; /* Centers the review cards vertically */
+  flex-wrap: wrap; /* Allows wrapping of cards to next line on smaller screens */
+  gap: 30px; /* Increased space between the cards */
+  padding: 20px 0;
+}
+
+/* Review Card */
+.review-card {
+  background: linear-gradient(145deg, #6f4f38, #4a2c2a); /* Gradient background for cards */
+  border-radius: 15px; /* Rounded corners for softer look */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+  width: 320px; /* Slightly larger cards */
+  padding: 25px;
+  text-align: center;
+  color: white; /* Ensuring text inside cards is readable */
+  border: 3px solid #a56c36; /* Border to match the section theme */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Review Card Hover Effect */
+.review-card:hover {
+  transform: translateY(-10px); /* Moves the card up on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Customer Image */
+.customer-image {
+  width: 120px; /* Slightly larger image */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #ffd700; /* Gold border for profile image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+}
+
+/* Customer Name */
+.customer-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffd700; /* Gold color for the name */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Text glow effect */
+}
+
+/* Customer Review Text */
+.customer-review {
+  font-size: 1.1rem;
+  line-height: 1.6; /* Better readability */
+  color: #f2f2f2; /* Light gray for review text */
+  font-style: italic; /* Adds a refined touch */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  padding: 0 10px; /* Add spacing inside */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .customer-review-section h2 {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+  .review-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 400px; /* Limit max width */
+  }
+  .customer-image {
+    width: 100px; /* Adjust size for smaller screens */
+    height: 100px;
+  }
+}
+
+/* Special Section */
+.special-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/burgerrr.jpg'); /* Ensure the correct path to your image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 5px solid #f5d97d; /* Add border to separate from the next section */
+}
+
+.special-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center content */
+  text-align: center;
+  color: white;
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  border-radius: 10px;
+  max-width: 80%; /* Adjusted max-width to make the box more proportionate */
+  border: 3px solid #d2691e; /* Brown border for a warm tone */
+}
+
+.special-text {
+  font-size: 2.8rem; /* Larger font for better readability */
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Soft text shadow for a glowing effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for special-text */
+.special-text:hover {
+  color: #f5d97d; /* Change text color to a golden hue */
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8); /* Intense text shadow on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Social Media Section */
+.social-media-section {
+  padding: 60px 30px;
+  background: linear-gradient(135deg, #4a2c2a, #6f4f38); /* Gradient background */
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  border-top: 5px solid #d2691e; /* Add border to separate from the previous section */
+  border-bottom: 5px solid #f5d97d; /* Add border to separate from the next section */
+}
+
+.social-media-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffd700; /* Gold heading */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Social Media Container */
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+/* Social Media Card */
+.social-card {
+  background: linear-gradient(145deg, #6f4f38, #4a2c2a);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  border: 3px solid #a56c36;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.social-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Social Media Icon */
+.social-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Social Media Name */
+.social-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+}
+
+/* Social Icon Hover Effect */
+.social-card:hover .social-icon {
+  transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .social-media-section h2 {
+    font-size: 2rem;
+  }
+  .social-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  .social-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Footer Section */
+.footer-section {
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+  color: #f5e9d9;
+  border-top: 5px solid #f5d97d; /* Added border to the top for separation */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f5d97d;
+  border-bottom: 3px solid #f5d97d;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-title:hover {
+  color: #f5d97d;
+  border-color: #f5d97d;
+  cursor: pointer;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link {
+  color: #f5e9d9;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f5d97d;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #f5d97d;
+}
+
+.footer-link:hover::before {
+  width: 100%;
+}
+
+.footer-column p {
+  color: #f5e9d9;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column p:hover {
+  color: #f5d97d;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  background-color: #4a2c2a;
+  margin-top: 40px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #f5e9d9;
+  opacity: 0.8;
+
+}
+
+
+.App {
+  font-family: Arial, sans-serif;
+}
+
+.main-section {
+  background-size: cover;
+  padding: 100px;
+  color: white;
+  text-align: center;
+}
+
+.app-container {
+  margin: 0;
+}
+
+/* Membership Card Section Styles */
+.membership-card-section {
+  padding: 60px 30px; /* Adjusted padding for a better layout */
+  background: linear-gradient(135deg, #4a2c2a, #6f4f38); /* Gradient for a vibrant background */
+  color: white; /* Ensures text is readable */
+  text-align: center; /* Centers all content */
+  border: 5px solid #a56c36; /* Golden-brown border to match the reviews section */
+  border-radius: 15px; /* Rounded corners for a softer, elegant look */
+  margin-bottom: 40px; /* Space between sections */
+}
+
+.membership-title {
+  font-size: 2.5rem; /* Larger title for emphasis */
+  margin-bottom: 40px; /* Adds space below the title */
+  color: #ffd700; /* Gold color for the title */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Subtle glow effect */
+  font-family: 'Arial', sans-serif; /* Modern font for the title */
+}
+
+.membership-card {
+  display: inline-block;
+  padding: 25px;
+  background: linear-gradient(145deg, #6f4f38, #4a2c2a); /* Gradient background for cards */
+  border-radius: 15px; /* Rounded corners for softer edges */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+  border: 3px solid #a56c36; /* Border to match the section theme */
+  width: 100%; /* Ensure full width on smaller screens */
+  max-width: 400px; /* Limit max width of the card */
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.membership-card:hover {
+  transform: translateY(-10px); /* Moves the card up on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+.membership-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+}
+
+.form-field label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffd700; /* Gold color for labels */
+}
+
+.form-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  color: black; /* Input text color */
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #ffd700; /* Bold button color */
+  color: brown;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.submit-button:hover {
+  background-color: #ffd700; /* Darker on hover */
+}
+
+.membership-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.membership-card-section h2 {
+  margin-bottom: 30px;
+  font-size: 2.2em; /* Slightly smaller than the title for subheading */
+  color: #ffd700; /* Gold for the section title */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .membership-title {
+    font-size: 2rem; /* Adjust title size for smaller screens */
+  }
+
+  .membership-card {
+    width: 90%; /* Ensure cards take up more space on small screens */
+    max-width: 300px; /* Limit max width on smaller screens */
+  }
+
+  .form-field input {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
